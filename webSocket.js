@@ -12,12 +12,14 @@ class WebSocketClient {
         this.wsBaseUrl = 'wss://api-v2.qredo.network/api/v2/actions/signrequests?token=';
         this.actionID = null;
         this.saHeaders = { 'Content-Type': 'application/json' };
-        this.saUrl = 'http://127.0.0.1:8007/api/v2'
+        this.saUrl = 'http://127.0.0.1:8007/api/v2';
+        this.awsRegion = 'eu-west-3';
+        this.awsSecretName = 'approver-api-key-4';
     }
 
     async initializeSecrets() {
         try {
-            const secrets = await getSecrets('approver-api-key-4', 'eu-west-3');
+            const secrets = await getSecrets(this.awsSecretName, this.awsRegion);
             this.apiSecret = secrets.apiSecret;
             this.apiKey = secrets.apiKey;
             this.workspaceID = secrets.workspaceID;

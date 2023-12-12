@@ -12,6 +12,7 @@ class WebSocketClient {
         this.wsBaseUrl = 'wss://api-v2.qredo.network/api/v2/actions/signrequests?token=';
         this.actionID = null;
         this.saHeaders = { 'Content-Type': 'application/json' };
+        this.saUrl = 'http://127.0.0.1:8007/api/v2'
     }
 
     async initializeSecrets() {
@@ -27,7 +28,7 @@ class WebSocketClient {
 
     async approveAction() {
         let myActionID = await this.actionID;
-        const url = `http://127.0.0.1:8007/api/v2/client/action/${myActionID}`;
+        const url = `${this.saUrl}/client/action/${myActionID}`;
         const method = "PUT";
         const response = await fetch(url, { method, headers: this.saHeaders });
         let confirmation = await response.json();
@@ -37,7 +38,7 @@ class WebSocketClient {
 
     async rejectAction() {
         let myActionID = await this.actionID;
-        const url = `http://127.0.0.1:8007/api/v2/client/action/${myActionID}`;
+        const url = `${this.saUrl}/client/action/${myActionID}`;
         const method = "DELETE";
         const response = await fetch(url, { method, headers: this.saHeaders });
         let confirmation = await response.json();

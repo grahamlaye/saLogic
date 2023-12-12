@@ -1,0 +1,62 @@
+[
+	{
+		"chainID": 5,
+		"name": "Ethereum Goerli"
+	},
+	{
+		"chainID": 11155111,
+		"name": "Ethereum Sepolia"
+	},
+	{
+		"chainID": 421614,
+		"name": "Arbitrum Sepolia"
+	},
+	{
+		"chainID": 11155420,
+		"name": "Optimism Sepolia"
+	},
+	{
+		"chainID": 17000,
+		"name": "Ethereum Holesky"
+	},
+	{
+		"chainID": 80001,
+		"name": "Polygon Mumbai"
+	},
+	{
+		"chainID": 43113,
+		"name": "Avalannche Fuji Testnet"
+	},
+	{
+		"chainID": 97,
+		"name": "BNB Smart Chain Testnet"
+	},
+	{
+		"chainID": 338,
+		"name": "Cronos Testnet"
+	},
+	{
+		"chainID": 4002,
+		"name": "Fantom Testnet"
+	},
+	{
+		"chainID": 84531,
+		"name": "Base Goerli Testnet"
+	},
+	{
+		"chainID": 84532,
+		"name": "Base Sepolia Testnet"
+	},
+	{
+		"chainID": 1230,
+		"name": "Ultron Testnet"
+	},
+	{
+		"chainID": 300,
+		"name": "zkSync Sepolia Testnet"
+	},
+	{
+		"chainID": 2221,
+		"name": "Kava Testnet"
+	}
+]

@@ -21,7 +21,7 @@ fi
 
 # Install required packages if not already installed
 if [ $(npm ls | egrep -c "@aws-sdk/client-secrets-manager@3.470.0|aws-sdk@2.1516.0|crypto-js@4.2.0|node-fetch@3.3.2|package.json@2.0.1|ws@8.15.0") != 6 ]; then
-    npm install
+    npm install package.json
 else
     echo "Correct packages already installed."
 fi

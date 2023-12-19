@@ -43,7 +43,7 @@ If you are using AWS Secrets Manager, please structure the secret as follows:
 {
 ${pT}\"apiKey\"${rC}: ${gT}\"apiKey\"${rC},
 ${pT}\"apiSecret\"${rC}: ${gT}\"apiSecret\"${rC},
-${pT}\"workspaceID\"${rC}: ${gT}\"workspaceID\"${rC    }
+${pT}\"workspaceID\"${rC}: ${gT}\"workspaceID\"${rC}
 }
 
 AWS Secrets Manager (aws)

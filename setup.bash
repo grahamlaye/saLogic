@@ -73,3 +73,6 @@ fi
 
 # Restore history for this session
 set -o history
+
+# Start Websocket stream
+node webSocket.js

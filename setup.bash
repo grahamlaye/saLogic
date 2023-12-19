@@ -43,9 +43,9 @@ echo -e "Please select a method for the webSocket.js file to retrieve apiKey, ap
 If you are using AWS Secrets Manager. Please structure the secret as follows:
 
 {
-${purpleText}"apiKey": ${greenText}"apiKey"${resetColour},
-${purpleText}"apiSecret": ${greenText}"apiSecret"${resetColour},
-${purpleText}"workspaceID": ${greenText}"workspaceID"${resetColour}
+${purpleText}"apiKey"${resetColour}: ${greenText}"apiKey"${resetColour},
+${purpleText}"apiSecret"${resetColour}: ${greenText}"apiSecret"${resetColour},
+${purpleText}"workspaceID"${resetColour}: ${greenText}"workspaceID"${resetColour}
 }
 
 AWS Secrets Manager (aws)

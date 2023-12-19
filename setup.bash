@@ -48,7 +48,7 @@ If you are using AWS Secrets Manager. Please structure the secret as follows:
 }
 
 AWS Secrets Manager (aws)
-Environment Variables (env)${restColour}"
+Environment Variables (env)${resetColour}"
 read -p "type aws or env: " secretChoice
 
 if [[ $secretChoice == "aws" ]]; then

@@ -5,6 +5,7 @@ set +o history
 
 # Set fancy colours
 greenText='\033[0;32m'
+purpleText='\033[0;35m'
 resetColour='\033[0m'
 
 # Check if Node.js is installed
@@ -20,7 +21,7 @@ fi
 
 # Check if npm is installed
 if command -v npm &> /dev/null; then
-    echo -e "${greenText} npm is already installed. ${resetColour}"
+    echo -e "npm is already installed."
 else
     # Install npm
     sudo dnf install npm -y
@@ -30,25 +31,25 @@ fi
 if [ $(npm ls | egrep -c "@aws-sdk/client-secrets-manager|aws-sdk|crypto-js|node-fetch|package.json|ws") != 6 ]; then
     npm install package.json
 else
-    echo -e "${greenText} Correct packages already installed. ${resetColour}"
+    echo -e "Correct packages already installed."
 fi
 
 # Check installed packages
 npm ls
 
 # Secrets method selector
-echo -e "${greenText} Please select a method for the webSocket.js file to retrieve apiKey, apiSecret and workspaceID values.
+echo -e "Please select a method for the webSocket.js file to retrieve apiKey, apiSecret and workspaceID values.
 
 If you are using AWS Secrets Manager. Please structure the secret as follows:
 
 {
-"apiKey": apiKey,
-"apiSecret": apiSecret,
-"workspaceID": workspaceID
+${purpleText}"apiKey": ${greenText}apiKey,
+${purpleText}"apiSecret": ${greenText}apiSecret,
+${purpleText}"workspaceID": ${greenText}workspaceID${resetColour}
 }
 
 AWS Secrets Manager (aws)
-Environment Variables (env)${resetColour}"
+Environment Variables (env)"
 read -p "type aws or env: " secretChoice
 
 if [[ $secretChoice == "aws" ]]; then

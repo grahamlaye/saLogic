@@ -20,7 +20,6 @@ class WebSocketClient {
         this.awsRegion = process.env.awsRegion || null;
         this.awsSecretName = process.env.secretsName || null;
     }
-
     async initializeSecrets() {
         if (this.awsRegion !== null && this.secretsName !== null) {
             try {
@@ -28,9 +27,12 @@ class WebSocketClient {
                 this.apiSecret = secrets.apiSecret;
                 this.apiKey = secrets.apiKey;
                 this.workspaceID = secrets.workspaceID;
+                console.log('Using AWS Secrets Manager to initialize websocket')
             } catch (error) {
                 console.error('Error initializing secrets:', error);
             }
+        } else {
+            console.log('Using Linux environment variables to initialize websocket')
         }
     }
 

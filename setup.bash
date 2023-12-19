@@ -4,9 +4,7 @@
 set +o history
 
 # Set fancy colours
-greenText='\033[0;32m'
-purpleText='\033[0;35m'
-resetColour='\033[0m'
+gT='\033[0;32m'; pT='\033[0;35m'; rC='\033[0m'
 
 # Check if Node.js is installed
 if command -v node &> /dev/null; then
@@ -40,12 +38,12 @@ npm ls
 # Secrets method selector
 echo -e "Please select a method for the webSocket.js file to retrieve apiKey, apiSecret and workspaceID values.
 
-If you are using AWS Secrets Manager. Please structure the secret as follows:
+If you are using AWS Secrets Manager, please structure the secret as follows:
 
 {
-${purpleText}\"apiKey\"${resetColour}: ${greenText}\"apiKey\"${resetColour},
-${purpleText}\"apiSecret\"${resetColour}: ${greenText}\"apiSecret\"${resetColour},
-${purpleText}\"workspaceID\"${resetColour}: ${greenText}\"workspaceID\"${resetColour}
+${pT}\"apiKey\"${rC}: ${gT}\"apiKey\"${rC},
+${pT}\"apiSecret\"${rC}: ${gT}\"apiSecret\"${rC},
+${pT}\"workspaceID\"${rC}: ${gT}\"workspaceID\"${rC    }
 }
 
 AWS Secrets Manager (aws)
@@ -72,3 +70,6 @@ elif [[ $secretChoice == "env" ]]; then
     read -p "Enter Workspace ID: " workspaceID
     export workspaceID
 fi
+
+# Restore history for this session
+set -o history

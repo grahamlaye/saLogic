@@ -22,15 +22,18 @@ class WebSocketClient {
     }
 
     async initializeSecrets() {
-        try {
-            const secrets = await getSecrets(this.awsSecretName, this.awsRegion);
-            this.apiSecret = secrets.apiSecret;
-            this.apiKey = secrets.apiKey;
-            this.workspaceID = secrets.workspaceID;
-        } catch (error) {
-            console.error('Error initializing secrets:', error);
+        if (this.awsRegion !== null && this.secretsName !== null) {
+            try {
+                const secrets = await getSecrets(this.awsSecretName, this.awsRegion);
+                this.apiSecret = secrets.apiSecret;
+                this.apiKey = secrets.apiKey;
+                this.workspaceID = secrets.workspaceID;
+            } catch (error) {
+                console.error('Error initializing secrets:', error);
+            }
         }
     }
+
 
     async approveAction() {
         let myActionID = await this.actionID;

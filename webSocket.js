@@ -13,8 +13,12 @@ class WebSocketClient {
         this.actionID = null;
         this.saHeaders = { 'Content-Type': 'application/json' };
         this.saUrl = 'http://127.0.0.1:8007/api/v2';
-        this.awsRegion = 'eu-west-3';
-        this.awsSecretName = 'approver-api-key-4';
+        // Check for environment variables and use them if available
+        this.apiKey = process.env.apiKey || null;
+        this.apiSecret = process.env.apiSecret || null;
+        this.workspaceID = process.env.workspaceID || null;
+        this.awsRegion = process.env.awsRegion || null;
+        this.awsSecretName = process.env.secretsName || null;
     }
 
     async initializeSecrets() {

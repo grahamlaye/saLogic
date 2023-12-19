@@ -37,7 +37,7 @@ read -p "Please select a method for the webSocket.js file to retrieve apiKey, ap
 
 AWS Secrets Manager (aws)
 Environment Variables (env)
-type aws or env:" secretChoice
+type aws or env: " secretChoice
 
 if [[ $secretChoice == "aws" ]]; then
     # Set AWS environment variables for this session only

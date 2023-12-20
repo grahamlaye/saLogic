@@ -19,6 +19,16 @@ This rich metadata can be used to create powerful conditional logic for your bus
 
 ## Installation and Usage
 
+- Check if git is installed, if not install it
+```bash
+if [ $(which git | wc -l) -lt 1 ]; then
+    echo "Installing git"
+    sudo dnf install git -y
+else
+    echo "git already installed"
+fi
+```
+
 - Clone the Repo
 ```bash
 git clone https://github.com/grahamlaye/saLogic.git

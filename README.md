@@ -15,6 +15,7 @@ This rich metadata can be used to create powerful conditional logic for your bus
 - This SA instance is registered as an approver and included within at least 1 transaction policy.
 - The SA instance has AutoApprove set to **false** in config.yaml.
 - You are using an Amazon Linux 2023 OS with sudo privileges.
+- If using AWS Secrets Manager for handling apiKey, apiSecret and workspaceID retrival, ensure your device has the appropriate IAM role or AWS CLI access permissions.
 - You have read and understood the API security best pracices guide [here](https://developers.qredo.com/developer-guides/qredo-api/security-best-practices).
 
 ## Installation and Usage

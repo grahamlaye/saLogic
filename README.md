@@ -44,7 +44,7 @@ For increased security, we recommend using AWS Secrets Manager where possible. I
 - Where both AWS variables and environment variables exist, the webSocket.js script will default to AWS.
 - Start the websSocket.js script.
 
-## Check it Out!
+## Check it Out!
 
 Initiate a transaction using your own code or the Postman examples cited in the [API tutorial videos](https://www.youtube.com/playlist?list=PLOPaH-ltpzReDIuBRwN_Hhw1-R5bQoq6p).
 For example:

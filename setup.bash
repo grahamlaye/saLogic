@@ -71,6 +71,28 @@ elif [[ $secretChoice == "env" ]]; then
     export workspaceID
 fi
 
+# Check if SA instance is running, ask for permission to start if not
+if [ "$(sudo docker ps | grep -ci signing-agent)" -lt 1 ]; then
+    echo "No SA instance detected, do you want to start one from this script?"
+    read -p "Please enter yes or no: " yesNoStart
+
+    if [ "$yesNoStart" == "yes" ]; then
+        echo "Searching for volume directory and config.yaml file in user home directory"
+        volDir=$(find "$HOME" -name volume)
+        configFile=$(find "$HOME" -name config.yaml)
+        echo "Volume folder: ${volDir} found | Config file: ${configFile} found. Trying to start SA instance..."
+        startSA=$(sudo docker run -ti --rm --name sa-demo -d -v "${volDir}:/volume" -p 8007:8007 signing-agent:latest)
+
+        if [ "$(sudo docker ps | grep -ci signing-agent)" -eq 1 ]; then
+            echo "SA instance started successfully as...
+
+            $(sudo docker ps)"
+        else
+            echo "Could not start SA instance. Please start manually and try running this utility again"
+        fi
+    fi
+fi
+
 # Restore history for this session
 set -o history
 

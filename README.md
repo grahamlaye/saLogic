@@ -47,7 +47,16 @@ The Setup script if necessary, will install Node.js and the all dependencies req
 
 You will be prompted to decide how you want to access your apiKey, apiSecret and workspaceID credentials necessary to run the websocket. This can be either AWS or Linux environment variables.
 
-For increased security, we recommend using AWS Secrets Manager where possible. If you select environment variables the setup script will:
+For increased security, we recommend using AWS Secrets Manager where possible. If you select **aws** the setup script expects your host device to have the appropriate access to AWS Secrets Manager and for the secret to be presented with the following JSON structure:
+
+```json
+{
+"apiKey": "apiKey",
+"apiSecret": "apiSecret",
+"workspaceID": "workspaceID"
+}
+```
+If you select **env** the setup script will:
 
 - Disable history for execution of script.
 - Save 3 environment variables; apiKey, apiSecret & workspaceID.

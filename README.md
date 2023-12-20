@@ -6,7 +6,7 @@ This repository uses a webSocket connection to the Qredo API network and receive
 
 Please use this tool as an practical example of performing fully automated governance decisions via customisable logic. Take the opportunity to look at the full set of human readable web3 data presented over the websocket.
 
-This rich metadata can be used to create powerful conditional logic to need the requirements of your business. 
+This rich metadata can be used to create powerful conditional logic for your business requirements.
 
 ## Pre-Reqs
 

@@ -27,12 +27,12 @@ git clone https://github.com/grahamlaye/saLogic.git
 ```bash
 cd saLogic
 ```
-- Run the setup.bash script. **IMPORTANT: ** Please run this script as per the example below. Typing "bash setup.bash" or "./setup.bash" results in errors.
+- Run the setup.bash script. **IMPORTANT**: Please run this script as per the example below. Typing "bash setup.bash" or "./setup.bash" results in errors.
 ```bash
 . setup.bash
 ```
 
-The Setup script will check if necessary, will install Node.js and the necessary dependencies to run the webSocket.js application.
+The Setup script if necessary, will install Node.js and the all dependencies required to run the webSocket.js application.
 
 You will be prompted to decide how you want to access your apiKey, apiSecret and workspaceID credentials necessary to run the websocket. This can be either AWS or Linux environment variables.
 
@@ -40,11 +40,13 @@ For increased security, we recommend using AWS Secrets Manager where possible. I
 
 - Disable history for execution of script.
 - Save 3 environment variables; apiKey, apiSecret & workspaceID.
-- These will **ONLY** be available to the current user's session. Variables are not shared or persisted.
+- These will **ONLY** be available to the current users session. Variables are not shared or persisted.
 - Where both AWS variables and environment variables exist, the webSocket.js script will default to AWS.
 - Start the websSocket.js script.
 
-## Initiate a transaction. Using your own code or the Postman examples cited in the [API tutorial videos](https://www.youtube.com/playlist?list=PLOPaH-ltpzReDIuBRwN_Hhw1-R5bQoq6p).
+## Check it Out!
+
+Initiate a transaction using your own code or the Postman examples cited in the [API tutorial videos](https://www.youtube.com/playlist?list=PLOPaH-ltpzReDIuBRwN_Hhw1-R5bQoq6p).
 For example:
 ```json
 {
